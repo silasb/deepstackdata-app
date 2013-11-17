@@ -57,5 +57,5 @@ gem 'capistrano-bundler'
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
 group :production do
-  gem 'unicorn'
+  gem 'thin'
 end
