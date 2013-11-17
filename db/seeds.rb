@@ -6,5 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+Tenant.destroy_all
+
+Tenant.create! name: 'Cincy Tech', subdomain: 'cincytech'
 Tenant.create! name: 'FooWidget', subdomain: 'foowidget'
 Tenant.create! name: 'silasb', subdomain: 'silasb'
