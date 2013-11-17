@@ -9,8 +9,8 @@ angular.module('ngappApp', [
   .config ($routeProvider) ->
     $routeProvider
       .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
+        templateUrl: 'views/portfolio.html'
+        controller: 'PortfolioCtrl'
       .when '/reports',
         templateUrl: 'views/reports.html'
         controller: 'ReportCtrl'
