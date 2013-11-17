@@ -50,3 +50,12 @@ end
 
 gem 'haml-rails'
 gem 'devise'
+#gem 'capistrano-nginx-unicorn', require: false, group: :development
+gem 'capistrano', '~> 3.0', require: false, group: :development
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+
+group :production do
+  gem 'unicorn'
+end
