@@ -9,8 +9,7 @@ class ApplicationController < ActionController::Base
     if current_user.nil?
       redirect_to new_user_session_path
     else
-      render :file => 'public/dist/index.html'
-      #render :json => current_tenant.inspect
+      render :file => 'public/index.html'
     end
   end
 
