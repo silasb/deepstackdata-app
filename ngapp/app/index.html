@@ -56,6 +56,17 @@
       </div>
     </nav>
 
+    <div class="container" ng-controller="WelcomeCtrl">
+
+      <div class="bs-callout bs-callout-info" ng-show="shown">
+        <button type="button" class="close" ng-click="dismiss()">&times;</button>
+
+        <h4>Hello</h4>
+        <p>Welcome to the app.</p>
+      </div>
+
+    </div>
+
     <!-- Add your site or application content here -->
     <div class="container" ng-view=""></div>
 
@@ -106,6 +117,7 @@
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/welcome.js"></script>
         <script src="scripts/controllers/report.js"></script>
         <script src="scripts/controllers/portfolio.js"></script>
         <!-- endbuild -->
