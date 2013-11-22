@@ -2,7 +2,10 @@
 
 angular.module('ngappApp')
   .controller 'WelcomeCtrl', ($scope, $cookieStore) ->
-    $scope.shown = $cookieStore.get('welcome_banner')
+    if $cookieStore.get('welcome_banner') == undefined
+      $scope.shown = true
+    else
+      $scope.shown = $cookieStore.get('welcome_banner')
 
     $scope.dismiss = () ->
       $scope.shown = false
