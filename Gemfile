@@ -53,9 +53,9 @@ gem 'devise'
 #gem 'capistrano-nginx-unicorn', require: false, group: :development
 group :development do
   gem 'capistrano', '~> 3.0.1'
-  #gem 'capistrano-rails'
-  #gem 'capistrano-bundler'
-  #gem 'capistrano-rbenv', github: "capistrano/rbenv"
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv', github: "capistrano/rbenv"
 end
 
 group :production do
