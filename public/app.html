@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="styles/1e220ebc.main.css"/>
+    <link rel="stylesheet" href="styles/01ad2439.main.css"/>
 
     <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   </head>
@@ -40,8 +40,17 @@
               <li><a href="#/reports">Reports</a></li>
               <li><a href="#/portfolio">Portfolio</a></li>
               <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i></a>
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-th-list"></i>
+                  <span class="badge" style="vertical-align:top" ng-controller="NotificationCtrl" ng-show="notifications.length != 0">{{ notifications.length }}</span>
+                </a>
                 <ul class="dropdown-menu">
+                  <li>
+                    <a href="#/notifications">
+                      Notifications
+                      <span class="badge" ng-controller="NotificationCtrl">{{ notifications.length }}</span>
+                    </a>
+                  </li>
                   <li><a href="#">Settings</a></li>
                   <li><a href="#">Support</a></li>
                   <li class="divider"></li>
@@ -53,6 +62,17 @@
 
       </div>
     </nav>
+
+    <div class="container" ng-controller="WelcomeCtrl">
+
+      <div class="bs-callout bs-callout-info" ng-show="shown">
+        <button type="button" class="close" ng-click="dismiss()">&times;</button>
+
+        <h4>Hello</h4>
+        <p>Welcome to the app.</p>
+      </div>
+
+    </div>
 
     <!-- Add your site or application content here -->
     <div class="container" ng-view=""></div>
@@ -78,11 +98,12 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
 
         <script src="scripts/3233641e.plugins.js"></script>
 
-        <script src="scripts/304f35e4.modules.js"></script>
+        <script src="scripts/71f34c37.modules.js"></script>
 
-        <script src="scripts/0e4ee593.scripts.js"></script>
+        <script src="scripts/4c82e140.scripts.js"></script>
 </body>
 </html>

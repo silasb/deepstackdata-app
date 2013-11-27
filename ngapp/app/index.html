@@ -42,8 +42,17 @@
               <li><a href="#/reports">Reports</a></li>
               <li><a href="#/portfolio">Portfolio</a></li>
               <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i></a>
+                <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="glyphicon glyphicon-th-list"></i>
+                  <span class="badge" style="vertical-align:top" ng-controller="NotificationCtrl" ng-show="notifications.length != 0">{{ notifications.length }}</span>
+                </a>
                 <ul class="dropdown-menu">
+                  <li>
+                    <a href="#/notifications">
+                      Notifications
+                      <span class="badge" ng-controller="NotificationCtrl">{{ notifications.length }}</span>
+                    </a>
+                  </li>
                   <li><a href="#">Settings</a></li>
                   <li><a href="#">Support</a></li>
                   <li class="divider"></li>
@@ -91,6 +100,7 @@
 
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/sass-bootstrap/js/affix.js"></script>
@@ -112,12 +122,14 @@
         <script src="bower_components/angular-cookies/angular-cookies.js"></script>
         <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/restangular/dist/restangular.js"></script>
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/welcome.js"></script>
+        <script src="scripts/controllers/notification.js"></script>
         <script src="scripts/controllers/report.js"></script>
         <script src="scripts/controllers/portfolio.js"></script>
         <!-- endbuild -->

@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-offset-1">
+        <div class="header">
+            <h3>Notifications</h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-repeat="notification in notifications">
+
+  <div class="bs-callout bs-callout-info" ng-show="shown">
+    <button type="button" class="close" ng-click="dismiss(notification)">&times;</button>
+
+    <h4>Hello</h4>
+    <p>Welcome to the app.</p>
+  </div>
+
+</div>
+

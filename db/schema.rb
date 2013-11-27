@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131119225356) do
+ActiveRecord::Schema.define(version: 20131122005433) do
+
+  create_table "notifications", force: true do |t|
+    t.text     "message"
+    t.string   "title"
+    t.integer  "user_id"
+    t.datetime "dismissed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
 
   create_table "tenants", force: true do |t|
     t.string   "subdomain"
