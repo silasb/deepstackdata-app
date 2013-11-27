@@ -7,8 +7,6 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   after_filter :set_csrf_cookie_for_ng
 
-  #after_filter :set_access_headers
-
   def cp
     if current_user.nil?
       redirect_to new_user_session_path
@@ -42,9 +40,4 @@ private
   def verified_request?
     super || form_authenticity_token == request.headers['HTTP_X_XSRF_TOKEN']
   end
-  
-  #def set_access_headers
-    #request.headers["Access-Control-Allow-Origin"] = "*"
-    #request.headers['Access-Control-Request-Method'] = '*' 
-  #end
 end
