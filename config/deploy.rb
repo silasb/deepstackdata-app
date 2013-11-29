@@ -1,7 +1,7 @@
 set :application, 'deepstackdata-app'
 set :repo_url, 'https://github.com/silasb/deepstackdata-app.git'
 
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+set :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :deploy_to, '/tmp/testing'
 set :scm, :git
@@ -23,14 +23,17 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
+    on roles(:all), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
+      within release_path do
+        execute :bundle, "exec thin restart -d -q"
+      end
     end
   end
 
   after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    on roles(:all), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
